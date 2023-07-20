@@ -1,5 +1,8 @@
-import app from './app' //importando dados do app
+import app from './routes/userRouter'; //importando dados do app
+import dotenv from 'dotenv';
+dotenv.config();
 
+const PORT = process.env.PORT || 5000;
 
 //iniciar o servidor
-app.listen(1903,()=>console.log('Servidor rodando na porta 1903')); //ouvindo a porta (poderia ser 1903, function listen (){})
+app.listen(PORT,()=>console.log('Servidor rodando na porta '+PORT)); //ouvindo a porta (poderia ser 1903, function listen (){})
