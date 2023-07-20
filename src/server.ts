@@ -1,6 +1,8 @@
-import app from './routes/userRouter'; //importando dados do app
+//importa o que configuramos no app e sobe para o servidor
+
 import dotenv from 'dotenv';
 dotenv.config();
+import app from './app'; //importando dados do arquivo app
 
 const PORT = process.env.PORT || 5000;
 

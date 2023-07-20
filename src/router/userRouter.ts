@@ -1,23 +1,21 @@
 const express = require('express');
 
-const router = express.Router();
-
 const fs = require('fs'); //filesystem (não é necessário instalar este pacote, como fazemos com o express, pois é nativo do windows)
 //Importar banco de dados de extensão .json
 const data: string = './database.json'; //pacote fs precisa de uma string com o nome do arquivo para poder acessá-lo, ao invés de o caminho
 //Instancia o express na variável app
-const app = express()
-//
-app.use(express.json()); //comando para o express usar o json
+//const app = express();
+const router = express.Router();
+//app.use(express.json()); //comando para o express usar o json
 
 //listar usuários
-app.get('/api/users', (req: any, res: any) => {
+router.get('/users', (req: any, res: any) => {
     const jsonData = fs.readFileSync(data); //chamando função readFileSync do pacote fs 
     res.send(JSON.parse(jsonData)); //analisar a string json e transformar dados em modelo javascript
 });
 
 //Cadastrar usuario
-app.post('/api/users', (req: any, res: any) => {
+router.post('/users', (req: any, res: any) => {
     //atribui a base de dados em nova variavel
     const jsonDataBase = fs.readFileSync(data);
 
@@ -48,7 +46,7 @@ app.post('/api/users', (req: any, res: any) => {
 });
 
 //Alterar usuário
-app.put('/api/user/:id', (req: any, res: any) => {
+router.put('/user/:id', (req: any, res: any) => {
     //atribui a base de dados em nova variavel
     const jsonDataBase = fs.readFileSync(data);
 
@@ -73,7 +71,7 @@ app.put('/api/user/:id', (req: any, res: any) => {
 
 
 //Deletar usuário
-app.delete('/api/user/:id', (req: any, res: any) => {
+router.delete('/user/:id', (req: any, res: any) => {
     //atribui a base de dados em nova variavel
     const jsonDataBase = fs.readFileSync(data);
 
@@ -96,6 +94,6 @@ app.delete('/api/user/:id', (req: any, res: any) => {
     res.send(`User with id ${userId} has been deleted`);
 });
 
-export default app; //o que foi construído em app.ts está disponível para acesso em outros locais 
+export default router; //o que foi construído em app.ts está disponível para acesso em outros locais 
 
 
