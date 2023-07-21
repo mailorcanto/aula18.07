@@ -12,7 +12,6 @@ async function getUser(req: Request, res: Response) {
     res.send(JSON.parse(jsonData)); //analisar a string json e transformar dados em modelo javascript
 }
 
-
 async function postUser(req: Request, res: Response) {
     //atribui a base de dados em nova variavel
     const jsonDataBase = fs.readFileSync(data);
