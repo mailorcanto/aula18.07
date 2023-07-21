@@ -1,8 +1,10 @@
 import {Request, Response} from "express"; //apenas utilizar o Request e o Responde do pacote express, ao invés de todas as funcionalidades
 
-//async serve para atualizar sem a necessidade de recarregar a 
+//async serve para atualizar sem a necessidade de recarregar a página
 
+//Importar o pacote File System para manipular arquivos
 const fs = require('fs'); //filesystem (não é necessário instalar este pacote, como fazemos com o express, pois é nativo do windows)
+
 //Importar banco de dados de extensão .json
 const data: string = './database.json'; //pacote fs precisa de uma string com o nome do arquivo para poder acessá-lo, ao invés de o caminho
 
