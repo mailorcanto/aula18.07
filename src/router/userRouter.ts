@@ -20,3 +20,4 @@ router.delete('/user/:id', userController.deleteUser);
 export default router; //o que foi construído em app.ts está disponível para acesso em outros locais 
 
 
+
