@@ -12,10 +12,10 @@ router.get('/users', userController.getUser);
 router.post('/users', userController.postUser);
 
 //Alterar usuário
-router.put('/user/:id', userController.putUser);
+//router.put('/user/:id', userController.putUser);
 
 //Deletar usuário
-router.delete('/user/:id', userController.deleteUser);
+//router.delete('/user/:id', userController.deleteUser);
 
 export default router; //o que foi construído em app.ts está disponível para acesso em outros locais 
 
