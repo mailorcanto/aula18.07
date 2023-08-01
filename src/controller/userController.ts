@@ -26,8 +26,8 @@ async function postUser(req: Request, res: Response) {
             res.json({ success: false})
         } else {
             res.json({success: true, message:'Cadastro de usuário realizado com sucesso',result: results});
-            }
-        });
+        }
+    });
 }
 
 async function putUser(req: Request, res: Response) {
